@@ -3,6 +3,7 @@
 class Window :public wxFrame
 {
 private:
+
 	wxButton* button = nullptr;
 	wxButton* button1 = nullptr;
 	wxButton* button2 = nullptr;
@@ -28,6 +29,7 @@ private:
 	wxTextCtrl* textBox = nullptr;
 public:
 	Window();
-
+	void OnButtonClicked(wxCommandEvent& evt);
+	wxDECLARE_EVENT_TABLE();
 };
 

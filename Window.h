@@ -15,6 +15,16 @@ private:
 	wxButton* button9 = nullptr;
 	wxButton* buttonA = nullptr;
 	wxButton* buttonB = nullptr;
+	wxButton* buttonC = nullptr;
+	wxButton* buttonD = nullptr;
+	wxButton* buttonE = nullptr;
+	wxButton* buttonF = nullptr;
+	wxButton* buttonG = nullptr;
+	wxButton* buttonH = nullptr;
+	wxButton* buttonI = nullptr;
+	wxButton* buttonJ = nullptr;
+
+
 	wxTextCtrl* textBox = nullptr;
 public:
 	Window();

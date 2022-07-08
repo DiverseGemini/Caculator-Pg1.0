@@ -87,6 +87,7 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 		break;
 	case 10006:
 		textBox->AppendText("6");
+		break;
 	case 10007:
 		textBox->AppendText("7");
 		break;
@@ -126,8 +127,8 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 	case 10019:
 		textBox->Clear();
 	case 10020:
-		break;
 		textBox->AppendText("-");
+		break;
 	default:
 		break;
 	}

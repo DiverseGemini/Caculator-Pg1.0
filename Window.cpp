@@ -1,5 +1,7 @@
 #include "Window.h"
 wxBEGIN_EVENT_TABLE(Window, wxFrame)
+EVT_BUTTON(10000, Window::OnButtonClicked)
+EVT_BUTTON(10020, Window::OnButtonClicked)
 EVT_BUTTON(10001, Window::OnButtonClicked)
 EVT_BUTTON(10002, Window::OnButtonClicked)
 EVT_BUTTON(10003, Window::OnButtonClicked)
@@ -29,7 +31,7 @@ Window::Window() : wxFrame(nullptr, wxID_ANY, "Caculator", wxPoint(0, 200), wxSi
 	textBox = new wxTextCtrl(this, wxID_ANY, "", wxPoint(0, 10), wxSize(270, 100));
 
 	//Frist row of numbers
-	button0 = new wxButton(this, 10000, "0", wxPoint(2, 200), wxSize(90, 90));
+	button0 = new wxButton(this, 10000, "0", wxPoint(182, 110), wxSize(90, 90));
 	button = new wxButton(this, 10001, "1", wxPoint(2, 200), wxSize(90, 90));
 	button2 = new wxButton(this, 10002, "2", wxPoint(92, 200), wxSize(90, 90));
 	button3 = new wxButton(this, 10003, "3", wxPoint(182, 200), wxSize(90, 90));
@@ -47,6 +49,7 @@ Window::Window() : wxFrame(nullptr, wxID_ANY, "Caculator", wxPoint(0, 200), wxSi
 	//PemDas
 	buttonA = new wxButton(this, 10010, "+", wxPoint(2, 110), wxSize(45, 30));
 	buttonB = new wxButton(this, 10011, "-", wxPoint(47, 110), wxSize(45, 30));
+	button2B = new wxButton(this, 10020, "(-)", wxPoint(2, 170), wxSize(45, 30));
 	buttonC = new wxButton(this, 10012, "*", wxPoint(92, 110), wxSize(45, 30));
 	buttonD = new wxButton(this, 10013, "/", wxPoint(137, 110), wxSize(45, 30));
 
@@ -56,58 +59,78 @@ Window::Window() : wxFrame(nullptr, wxID_ANY, "Caculator", wxPoint(0, 200), wxSi
 	buttonJ = new wxButton(this, 10017, "Mod", wxPoint(137, 140), wxSize(45, 30));
 
 	//clear and anwser button
-	buttonE = new wxButton(this, 10018, "=", wxPoint(183, 110), wxSize(45, 30));
-	buttonF = new wxButton(this, 10019, "Clear", wxPoint(183, 140), wxSize(45, 30));
-
+	buttonE = new wxButton(this, 10018, "=", wxPoint(47, 170), wxSize(45, 30));
+	buttonF = new wxButton(this, 10019, "Clear", wxPoint(92, 170), wxSize(45, 30));
 }
-	void Window::OnButtonClicked(wxCommandEvent& evt)
+void Window::OnButtonClicked(wxCommandEvent& evt)
+{
+	int Gid = evt.GetId();
+	switch (Gid)
 	{
-		int Gid = evt.GetId();
-		switch (Gid)
-		{
-		case 10001:
-			textBox->AppendText("1");
-		case 10002:
-			textBox->AppendText("2");
-		case 10003:
-			textBox->AppendText("3");
-		case 10004:
-			textBox->AppendText("4");
-		case 10005:
-			textBox->AppendText("5");
-		case 10006:
-			textBox->AppendText("6");
-		case 10007:
-			textBox->AppendText("7");
-		case 10008:
-			textBox->AppendText("8");
-		case 10009:
-			textBox->AppendText("9");
-		case 10010:
-			textBox->AppendText("10");
-		case 10011:
-			textBox->AppendText("11");
-		case 10012:
-			textBox->AppendText("12");
-		case 10013:
-			textBox->AppendText("13");
-		case 10014:
-			textBox->AppendText("14");
-		case 10015:
-			textBox->AppendText("15");
-		case 10016:
-			textBox->AppendText("16");
-		case 10017:
-			textBox->AppendText("17");
-		case 10018:
-			textBox->AppendText("18");
-		case 10019:
-			textBox->AppendText("19");
-
-		default:
-			break;
-		}
-		
-		evt.Skip();
+	case 10000:
+		textBox->AppendText("0");
+		break;
+	case 10001:
+		textBox->AppendText("1");
+		break;
+	case 10002:
+		textBox->AppendText("2");
+		break;
+	case 10003:
+		textBox->AppendText("3");
+		break;
+	case 10004:
+		textBox->AppendText("4");
+		break;
+	case 10005:
+		textBox->AppendText("5");
+		break;
+	case 10006:
+		textBox->AppendText("6");
+	case 10007:
+		textBox->AppendText("7");
+		break;
+	case 10008:
+		textBox->AppendText("8");
+		break;
+	case 10009:
+		textBox->AppendText("9");
+		break;
+	case 10010:
+		textBox->AppendText("+");
+		break;
+	case 10011:
+		textBox->AppendText("-");
+		break;
+	case 10012:
+		textBox->AppendText("*");
+		break;
+	case 10013:
+		textBox->AppendText("/");
+		break;
+	case 10014:
+		textBox->AppendText("bIn");
+		break;
+	case 10015:
+		textBox->AppendText("Hex");
+		break;
+	case 10016:
+		textBox->AppendText(".");
+		break;
+	case 10017:
+		textBox->AppendText("%");
+		break;
+	case 10018:
+		textBox->AppendText("=");
+		break;
+	case 10019:
+		textBox->Clear();
+	case 10020:
+		break;
+		textBox->AppendText("-");
+	default:
+		break;
 	}
 
+	evt.Skip();
+}

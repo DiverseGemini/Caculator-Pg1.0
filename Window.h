@@ -3,7 +3,7 @@
 class Window :public wxFrame
 {
 private:
-
+	wxButton* button0 = nullptr;
 	wxButton* button = nullptr;
 	wxButton* button1 = nullptr;
 	wxButton* button2 = nullptr;
@@ -16,6 +16,7 @@ private:
 	wxButton* button9 = nullptr;
 	wxButton* buttonA = nullptr;
 	wxButton* buttonB = nullptr;
+	wxButton* button2B = nullptr;
 	wxButton* buttonC = nullptr;
 	wxButton* buttonD = nullptr;
 	wxButton* buttonE = nullptr;

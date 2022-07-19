@@ -1,5 +1,6 @@
 #pragma once
 #include"wx/wx.h"
+#include "CalcProccessor.h"
 class Window :public wxFrame
 {
 private:
@@ -29,6 +30,9 @@ private:
 
 	wxTextCtrl* textBox = nullptr;
 public:
+
+	CalcProccessor* CP_Instance = CP_Instance->GetInstance();
+
 	Window();
 	void OnButtonClicked(wxCommandEvent& evt);
 	wxDECLARE_EVENT_TABLE();

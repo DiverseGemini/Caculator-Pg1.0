@@ -1,5 +1,7 @@
 #include "Window.h"
 #include "ButtonFactory.h"
+#include "CalcProccessor.h"
+
 
 wxBEGIN_EVENT_TABLE(Window, wxFrame)
 EVT_BUTTON(10000, Window::OnButtonClicked)
@@ -46,6 +48,7 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 	{
 	case 10000:
 		textBox->AppendText("0");
+	
 		break;
 	case 10001:
 		textBox->AppendText("1");
@@ -76,6 +79,7 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 		break;
 	case 10010:
 		textBox->AppendText("+");
+		CP_Instance->add(textBox);
 		break;
 	case 10011:
 		textBox->AppendText("-");
@@ -88,9 +92,13 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 		break;
 	case 10014:
 		textBox->AppendText("bIn");
+		textBox->SetValue(CP_Instance->ToBinaryString(textBox));
+		
 		break;
 	case 10015:
 		textBox->AppendText("Hex");
+		textBox->SetValue(CP_Instance->ToDecString(textBox));
+
 		break;
 	case 10016:
 		textBox->AppendText(".");
@@ -100,6 +108,7 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 		break;
 	case 10018:
 		textBox->AppendText("=");
+		CP_Instance->equal(textBox);
 		break;
 	case 10019:
 		textBox->Clear();

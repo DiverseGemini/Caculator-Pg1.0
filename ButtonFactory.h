@@ -19,29 +19,6 @@ public:
 
 
 };
-//class  SingleTon
-//{
-//public:
-//	static SingleTon& Get() {
-//		return s_Instance;
-//	}
-//private:
-//	 SingleTon();
-//	~ SingleTon();
-//	static SingleTon s_Instance;
-//};
-//
-//SingleTon SingleTon::s_Instance;
-//int main()
-//{
-//	SingleTon::Get();
-//}
-// SingleTon:: SingleTon()
-//{
-//}
-//
-// SingleTon::~ SingleTon()
-//{
-//}
+
 
 

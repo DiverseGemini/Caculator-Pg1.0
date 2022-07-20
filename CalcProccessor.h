@@ -23,21 +23,21 @@ public:
 
 	//Pemdas and any signs
 	public:
-
-
-		float x;
-		float y;
+		std::vector<float>Pemdas;
+		 
+		bool addi = false;
+		bool eq = false;
+		float x = 0, y = 0;
+		
 
 	float bob(wxTextCtrl* TBox);
-
-	
-	float add( wxTextCtrl* TBox);
-	float sub(wxTextCtrl* TBox);
-	float multiply(wxTextCtrl* TBox);
-	float Div(wxTextCtrl* TBox);
+	void add( wxTextCtrl* TBox);
+	void sub(wxTextCtrl* TBox);
+	void multiply(wxTextCtrl* TBox);
+	void Div(wxTextCtrl* TBox);
 	void equal(wxTextCtrl* TBox);
 	std::string ToBinaryString(wxTextCtrl* TBox);
-		std::string ToDecString(wxTextCtrl* TBox);
+		std::string ToDexString(wxTextCtrl* TBox);
 
 
 	 

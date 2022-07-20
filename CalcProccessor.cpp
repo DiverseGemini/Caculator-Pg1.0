@@ -9,52 +9,91 @@ float CalcProccessor::bob(wxTextCtrl* TBox)
 	return txbox;
 }
 
-float CalcProccessor::add(wxTextCtrl* TBox)
+void CalcProccessor::add(wxTextCtrl* TBox)
 {
+	addi = true;
+	if (x == 0)
+	{
+		x = bob(TBox);
+		TBox->Clear();
 
+	}
+
+	if (eq == true)
+	{
+		float _addition = x + y;
+
+		TBox->SetValue(std::to_string(_addition));
+
+	}
+
+}
+
+void CalcProccessor::sub(wxTextCtrl* TBox)
+{
+	if (x == 0)
+	{
+		x = bob(TBox);
+		TBox->Clear();
+
+	}
+
+	if (eq == true)
+	{
+		float _addition = x + y;
+
+		TBox->SetValue(std::to_string(_addition));
+
+	}
+}
+
+void CalcProccessor::multiply(wxTextCtrl* TBox)
+{
 	x = bob(TBox);
 
 	y = bob(TBox);
 	TBox->Clear();
-	float _addition = x + y;
-
-	return  _addition;
-}
-
-float CalcProccessor::sub(wxTextCtrl* TBox)
-{
-	float ssub = x - y;
-	return ssub;
-}
-
-float CalcProccessor::multiply(wxTextCtrl* TBox)
-{
 	float mult = x * y;
-	return mult;
+	
 }
 
-float CalcProccessor::Div(wxTextCtrl* TBox)
+void CalcProccessor::Div(wxTextCtrl* TBox)
 {
+	x = bob(TBox);
+
+	y = bob(TBox);
+	TBox->Clear();
 	float di = x / y;
-	return di;
+	
 }
 
 void CalcProccessor::equal(wxTextCtrl* TBox)
 {
-	
+	eq = true;
+	y = bob(TBox);
+
+	if (addi == true)
+	{
+		add(TBox);
+		addi = false;
+		eq = false;
+	}
+
+
 }
+
 
 
 
 std::string CalcProccessor::ToBinaryString(wxTextCtrl* TBox)
 {
-	int number = stof((std::string)TBox->GetValue());
+	int number = stoi((std::string)TBox->GetValue());
 	std::string results = "";
 	for (int i = 0; i < 10; i++)
 	{
 		//results = std::to_string(number % 2) + results;
 
-		if (number%2 == 0)
+		if (number % 2 == 0)
 		{
 			results = "0" + results;
 		}
@@ -67,16 +106,15 @@ std::string CalcProccessor::ToBinaryString(wxTextCtrl* TBox)
 	return results;
 }
 
-
-std::string CalcProccessor::ToDecString(wxTextCtrl* TBox)
+std::string CalcProccessor::ToDexString(wxTextCtrl* TBox)
 {
-	int number = stof((std::string)TBox->GetValue());
+	int number = stoi((std::string)TBox->GetValue());
 	std::string results = "";
 
 	while (number > 0)
 	{
 		int remainder = number % 16;
-		if (remainder< 10)
+		if (remainder < 10)
 		{
 			results = std::to_string(remainder) + results;
 		}

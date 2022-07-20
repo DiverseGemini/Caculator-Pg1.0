@@ -83,21 +83,23 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 		break;
 	case 10011:
 		textBox->AppendText("-");
+		CP_Instance->add(textBox);
 		break;
 	case 10012:
 		textBox->AppendText("*");
+		CP_Instance->multiply(textBox);
 		break;
 	case 10013:
 		textBox->AppendText("/");
 		break;
 	case 10014:
-		textBox->AppendText("bIn");
+		textBox->AppendText("bin");
 		textBox->SetValue(CP_Instance->ToBinaryString(textBox));
 		
 		break;
 	case 10015:
 		textBox->AppendText("Hex");
-		textBox->SetValue(CP_Instance->ToDecString(textBox));
+		textBox->SetValue(CP_Instance->ToDexString(textBox));
 
 		break;
 	case 10016:
@@ -115,6 +117,7 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 		break;
 	case 10020:
 		textBox->AppendText("-");
+		
 		break;
 	default:
 		break;

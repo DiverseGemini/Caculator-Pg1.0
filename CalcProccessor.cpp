@@ -197,27 +197,27 @@ std::string CalcProccessor::ToDexString(wxTextCtrl* TBox)
 		}
 		else if (remainder == 10)
 		{
-			results += "A"; // +remainder;
+			results = "A" + results;
 		}
 		else if (remainder == 11)
 		{
-			results += "B"; // +remainder;
+			results = "B"+ results;
 		}
 		else if (remainder == 12)
 		{
-			results += "C"; // +remainder;
+results = "C" +remainder;
 		}
 		else if (remainder == 13)
 		{
-			results += "D"; // +remainder;
+			results = "D"+ results;
 		}
 		else if (remainder == 14)
 		{
-			results += "E"; // +remainder;
+			results = "E"+ results;
 		}
 		else if (remainder == 15)
 		{
-			results += "F"; // +remainder;
+			results = "F" + results;
 		}
 		number = number / 16;
 

@@ -201,19 +201,19 @@ std::string CalcProccessor::ToDexString(wxTextCtrl* TBox)
 		}
 		else if (remainder == 11)
 		{
-			results = "B"+ results;
+			results = "B" + results;
 		}
 		else if (remainder == 12)
 		{
-results = "C" +remainder;
+			results = "C" + remainder;
 		}
 		else if (remainder == 13)
 		{
-			results = "D"+ results;
+			results = "D" + results;
 		}
 		else if (remainder == 14)
 		{
-			results = "E"+ results;
+			results = "E" + results;
 		}
 		else if (remainder == 15)
 		{

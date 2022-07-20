@@ -89,6 +89,32 @@ void CalcProccessor::Div(wxTextCtrl* TBox)
 	}
 
 }
+void CalcProccessor::Modd(wxTextCtrl* TBox)
+{
+
+	modb = true;
+	if (x == 0)
+	{
+		x = bob(TBox);
+		TBox->Clear();
+
+	}
+
+	if (eq == true)
+	{
+		int mod = (int)x % (int)y;
+
+
+		TBox->SetValue(std::to_string(mod));
+
+	}
+
+}
+void CalcProccessor::cleear(wxTextCtrl* TBox)
+{
+	TBox->SetValue("0");
+	x = 0;
+}
 
 void CalcProccessor::equal(wxTextCtrl* TBox)
 {
@@ -120,8 +146,15 @@ void CalcProccessor::equal(wxTextCtrl* TBox)
 		divb = false;
 		eq = false;
 	}
+	if (modb == true)
+	{
+		Div(TBox);
+		modb = false;
+		eq = false;
+	}
 
 }
+
 
 
 
@@ -146,6 +179,7 @@ std::string CalcProccessor::ToBinaryString(wxTextCtrl* TBox)
 	}
 	return results;
 }
+
 
 std::string CalcProccessor::ToDexString(wxTextCtrl* TBox)
 {

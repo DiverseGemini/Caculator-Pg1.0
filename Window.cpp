@@ -115,6 +115,7 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 		break;
 	case 10019:
 		textBox->Clear();
+		CP_Instance->cleear(textBox);
 		break;
 	case 10020:
 		textBox->AppendText("-");

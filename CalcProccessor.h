@@ -37,6 +37,8 @@ public:
 	void sub(wxTextCtrl* TBox);
 	void multiply(wxTextCtrl* TBox);
 	void Div(wxTextCtrl* TBox);
+	void Modd(wxTextCtrl* TBox);
+	void cleear(wxTextCtrl* TBox);
 	void equal(wxTextCtrl* TBox);
 	std::string ToBinaryString(wxTextCtrl* TBox);
 	std::string ToDexString(wxTextCtrl* TBox);

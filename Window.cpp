@@ -83,7 +83,7 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 		break;
 	case 10011:
 		textBox->AppendText("-");
-		CP_Instance->add(textBox);
+		CP_Instance->sub(textBox);
 		break;
 	case 10012:
 		textBox->AppendText("*");
@@ -91,6 +91,7 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 		break;
 	case 10013:
 		textBox->AppendText("/");
+		CP_Instance->Div(textBox);
 		break;
 	case 10014:
 		textBox->AppendText("bin");

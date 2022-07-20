@@ -31,6 +31,7 @@ void CalcProccessor::add(wxTextCtrl* TBox)
 
 void CalcProccessor::sub(wxTextCtrl* TBox)
 {
+	subf = true;
 	if (x == 0)
 	{
 		x = bob(TBox);
@@ -40,36 +41,59 @@ void CalcProccessor::sub(wxTextCtrl* TBox)
 
 	if (eq == true)
 	{
-		float _addition = x + y;
+		float _subtraction = x - y;
 
-		TBox->SetValue(std::to_string(_addition));
+		TBox->SetValue(std::to_string(_subtraction));
 
 	}
 }
 
 void CalcProccessor::multiply(wxTextCtrl* TBox)
 {
-	x = bob(TBox);
+	multiplyb = true;
+	if (x == 0)
+	{
+		x = bob(TBox);
+		TBox->Clear();
 
-	y = bob(TBox);
-	TBox->Clear();
-	float mult = x * y;
-	
+	}
+
+	if (eq == true)
+	{
+		float mult = x * y;
+
+
+		TBox->SetValue(std::to_string(mult));
+
+	}
+
 }
 
 void CalcProccessor::Div(wxTextCtrl* TBox)
 {
-	x = bob(TBox);
+	divb = true;
+	if (x == 0)
+	{
+		x = bob(TBox);
+		TBox->Clear();
 
-	y = bob(TBox);
-	TBox->Clear();
-	float di = x / y;
-	
+	}
+
+	if (eq == true)
+	{
+		float di = x / y;
+
+
+		TBox->SetValue(std::to_string(di));
+
+	}
+
 }
 
 void CalcProccessor::equal(wxTextCtrl* TBox)
 {
 	eq = true;
+
 	y = bob(TBox);
 
 	if (addi == true)
@@ -78,7 +102,24 @@ void CalcProccessor::equal(wxTextCtrl* TBox)
 		addi = false;
 		eq = false;
 	}
-
+	if (subf == true)
+	{
+		sub(TBox);
+		subf = false;
+		eq = false;
+	}
+	if (multiplyb == true)
+	{
+		multiply(TBox);
+		multiplyb = false;
+		eq = false;
+	}
+	if (divb == true)
+	{
+		Div(TBox);
+		divb = false;
+		eq = false;
+	}
 
 }
 

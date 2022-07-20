@@ -12,7 +12,7 @@ public:
 	static CalcProccessor* GetInstance() {
 		if (CP_Instance == nullptr)
 		{
-	
+
 			CP_Instance = new CalcProccessor;
 
 		}
@@ -22,26 +22,28 @@ public:
 	void operator=(CalcProccessor& other) = delete;
 
 	//Pemdas and any signs
-	public:
-		std::vector<float>Pemdas;
-		 
-		bool addi = false;
-		bool eq = false;
-		float x = 0, y = 0;
-		
+public:
+	std::vector<float>Pemdas;
+
+
+	bool addi, subf, multiplyb, divb, modb = false;
+	
+	bool eq = false;
+	float x = 0, y = 0;
+
 
 	float bob(wxTextCtrl* TBox);
-	void add( wxTextCtrl* TBox);
+	void add(wxTextCtrl* TBox);
 	void sub(wxTextCtrl* TBox);
 	void multiply(wxTextCtrl* TBox);
 	void Div(wxTextCtrl* TBox);
 	void equal(wxTextCtrl* TBox);
 	std::string ToBinaryString(wxTextCtrl* TBox);
-		std::string ToDexString(wxTextCtrl* TBox);
+	std::string ToDexString(wxTextCtrl* TBox);
 
 
-	 
 
-	
+
+
 };
 

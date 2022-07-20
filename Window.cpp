@@ -47,10 +47,12 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 	switch (Gid)
 	{
 	case 10000:
+		
 		textBox->AppendText("0");
 	
 		break;
 	case 10001:
+		
 		textBox->AppendText("1");
 		break;
 	case 10002:
@@ -108,6 +110,7 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 		break;
 	case 10017:
 		textBox->AppendText("%");
+		CP_Instance->Modd(textBox);
 		break;
 	case 10018:
 		textBox->AppendText("=");
@@ -115,7 +118,7 @@ void Window::OnButtonClicked(wxCommandEvent& evt)
 		break;
 	case 10019:
 		textBox->Clear();
-		CP_Instance->cleear(textBox);
+		CP_Instance->clearit(textBox);
 		break;
 	case 10020:
 		textBox->AppendText("-");

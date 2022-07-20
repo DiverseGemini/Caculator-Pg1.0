@@ -48,6 +48,7 @@ void CalcProccessor::sub(wxTextCtrl* TBox)
 	}
 }
 
+
 void CalcProccessor::multiply(wxTextCtrl* TBox)
 {
 	multiplyb = true;
@@ -110,10 +111,11 @@ void CalcProccessor::Modd(wxTextCtrl* TBox)
 	}
 
 }
-void CalcProccessor::cleear(wxTextCtrl* TBox)
+void CalcProccessor::clearit(wxTextCtrl* TBox)
 {
-	TBox->SetValue("0");
+	TBox->SetValue("");
 	x = 0;
+	y = 0;
 }
 
 void CalcProccessor::equal(wxTextCtrl* TBox)
@@ -195,27 +197,27 @@ std::string CalcProccessor::ToDexString(wxTextCtrl* TBox)
 		}
 		else if (remainder == 10)
 		{
-			results = "A" + remainder;
+			results += "A"; // +remainder;
 		}
 		else if (remainder == 11)
 		{
-			results = "B" + remainder;
+			results += "B"; // +remainder;
 		}
 		else if (remainder == 12)
 		{
-			results = "C" + remainder;
+			results += "C"; // +remainder;
 		}
 		else if (remainder == 13)
 		{
-			results = "D" + remainder;
+			results += "D"; // +remainder;
 		}
 		else if (remainder == 14)
 		{
-			results = "E" + remainder;
+			results += "E"; // +remainder;
 		}
 		else if (remainder == 15)
 		{
-			results = "F" + remainder;
+			results += "F"; // +remainder;
 		}
 		number = number / 16;
 

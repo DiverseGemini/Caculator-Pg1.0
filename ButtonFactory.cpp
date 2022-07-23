@@ -1,6 +1,67 @@
 #include "ButtonFactory.h"
 #include "Window.h"
 
+	wxButton* ButtonFactory::ButtonM(wxWindow * tis) {
+
+		wxButton* button = new wxButton(tis, 10000, "0", wxPoint(182, 110), wxSize(90, 90));
+		return button;
+	}
+
+	wxButton* ButtonFactory::ButtonM1(wxWindow * tis) {
+
+		wxButton* button1 = new wxButton(tis, 10001, "1", wxPoint(2, 200), wxSize(90, 90));
+		return button1;
+	}
+	wxButton* ButtonFactory::ButtonM2(wxWindow * tis) {
+
+		wxButton* button2 = new wxButton(tis, 10002, "2", wxPoint(92, 200), wxSize(90, 90));
+		return button2;
+
+	}
+
+
+
+	wxButton* ButtonFactory::ButtonM3(wxWindow * tis) {
+
+		wxButton* button3 = new wxButton(tis, 10003, "3", wxPoint(182, 200), wxSize(90, 90));
+
+
+		return button3;
+
+
+	}
+	wxButton* ButtonFactory::ButtonM4(wxWindow * tis) {
+
+		wxButton* button4 = new wxButton(tis, 10004, "4", wxPoint(2, 290), wxSize(90, 90));
+		return button4;
+	}
+	wxButton* ButtonFactory::ButtonM5(wxWindow * tis) {
+
+		wxButton* button5 = new wxButton(tis, 10005, "5", wxPoint(92, 290), wxSize(90, 90));
+		return button5;
+	}
+	wxButton* ButtonFactory::ButtonM6(wxWindow * tis) {
+
+		wxButton* button6 = new wxButton(tis, 10006, "6", wxPoint(182, 290), wxSize(90, 90));
+		return button6;
+
+
+	}
+	wxButton* ButtonFactory::ButtonM7(wxWindow * tis) {
+		wxButton* button7 = new wxButton(tis, 10007, "7", wxPoint(2, 380), wxSize(90, 90));
+		return button7;
+	}
+	wxButton* ButtonFactory::ButtonM8(wxWindow * tis) {
+
+
+		wxButton* button8 = new wxButton(tis, 10008, "8", wxPoint(92, 380), wxSize(90, 90));
+
+		return button8;
+	}
+	wxButton* ButtonFactory::ButtonM9(wxWindow * tis) {
+		wxButton* button9 = new wxButton(tis, 10009, "9", wxPoint(182, 380), wxSize(90, 90));
+		return button9;
+	}
 ButtonFactory::ButtonFactory()
 {
 }
@@ -12,27 +73,18 @@ ButtonFactory::~ButtonFactory()
 void ButtonFactory::CreateButton(wxWindow* tis)
 {
 	//Making the buttons  
-
+	ButtonM(tis);
+	ButtonM1(tis); 
+	ButtonM2(tis);
+	ButtonM3(tis);
+	ButtonM4(tis);
+	ButtonM5(tis);
+	ButtonM6(tis);
+	ButtonM7(tis);
+	ButtonM8(tis);
+	ButtonM9(tis);
 	
-	//put this right into window 
-
 	
-
-	//Frist row of numbers
-		wxButton* button = new wxButton(tis, 10000, "0", wxPoint(182, 110), wxSize(90, 90));
-	wxButton* button1 = new wxButton(tis, 10001, "1", wxPoint(2, 200), wxSize(90, 90));
-	wxButton* button2 = new wxButton(tis, 10002, "2", wxPoint(92, 200), wxSize(90, 90));
-	wxButton* button3 = new wxButton(tis, 10003, "3", wxPoint(182, 200), wxSize(90, 90));
-
-	//second row of numbers 
-	wxButton* button4 = new wxButton(tis, 10004, "4", wxPoint(2, 290), wxSize(90, 90));
-	wxButton* button5 = new wxButton(tis, 10005, "5", wxPoint(92, 290), wxSize(90, 90));
-	wxButton* button6 = new wxButton(tis, 10006, "6", wxPoint(182, 290), wxSize(90, 90));
-	//Third row of numbers 
-	wxButton* button7 = new wxButton(tis, 10007, "7", wxPoint(2, 380), wxSize(90, 90));
-	wxButton* button8 = new wxButton(tis, 10008, "8", wxPoint(92, 380), wxSize(90, 90));
-	wxButton* button9 = new wxButton(tis, 10009, "9", wxPoint(182, 380), wxSize(90, 90));
-
 
 
 	//PemDas
@@ -53,8 +105,9 @@ void ButtonFactory::CreateButton(wxWindow* tis)
 
 
 
-
-
 }
+
+
+
 
 

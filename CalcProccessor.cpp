@@ -3,13 +3,27 @@
 
 CalcProccessor* CalcProccessor::CP_Instance = nullptr;
 
+CalcProccessor* CalcProccessor::GetInstance() {
+	if (CP_Instance == nullptr)
+	{
+
+		CP_Instance = new CalcProccessor;
+
+	}
+	return CP_Instance;
+}
+
+CalcProccessor::CalcProccessor()
+{
+}
+
 float CalcProccessor::bob(wxTextCtrl* TBox)
 {
 	float txbox = stof((std::string)TBox->GetValue());
 	return txbox;
 }
 
-void CalcProccessor::add(wxTextCtrl* TBox)
+float CalcProccessor::add(wxTextCtrl* TBox)
 {
 	addi = true;
 	if (x == 0)
@@ -21,15 +35,15 @@ void CalcProccessor::add(wxTextCtrl* TBox)
 
 	if (eq == true)
 	{
-		float _addition = x + y;
+		_addition = x + y;
 
 		TBox->SetValue(std::to_string(_addition));
 
 	}
-
+	return _addition;
 }
 
-void CalcProccessor::sub(wxTextCtrl* TBox)
+float CalcProccessor::sub(wxTextCtrl* TBox)
 {
 	subf = true;
 	if (x == 0)
@@ -41,15 +55,16 @@ void CalcProccessor::sub(wxTextCtrl* TBox)
 
 	if (eq == true)
 	{
-		float _subtraction = x - y;
+		_subtraction = x - y;
 
 		TBox->SetValue(std::to_string(_subtraction));
 
 	}
+	return _subtraction;
 }
 
 
-void CalcProccessor::multiply(wxTextCtrl* TBox)
+float CalcProccessor::multiply(wxTextCtrl* TBox)
 {
 	multiplyb = true;
 	if (x == 0)
@@ -61,18 +76,19 @@ void CalcProccessor::multiply(wxTextCtrl* TBox)
 
 	if (eq == true)
 	{
-		float mult = x * y;
+		_mult = x * y;
 
 
-		TBox->SetValue(std::to_string(mult));
+		TBox->SetValue(std::to_string(_mult));
 
 	}
-
+	return _mult;
 }
 
-void CalcProccessor::Div(wxTextCtrl* TBox)
+float CalcProccessor::Div(wxTextCtrl* TBox)
 {
 	divb = true;
+
 	if (x == 0)
 	{
 		x = bob(TBox);
@@ -82,15 +98,16 @@ void CalcProccessor::Div(wxTextCtrl* TBox)
 
 	if (eq == true)
 	{
-		float di = x / y;
 
+		di = x / y;
 
 		TBox->SetValue(std::to_string(di));
 
 	}
+	return di;
 
 }
-void CalcProccessor::Modd(wxTextCtrl* TBox)
+float CalcProccessor::Modd(wxTextCtrl* TBox)
 {
 
 	modb = true;
@@ -103,22 +120,28 @@ void CalcProccessor::Modd(wxTextCtrl* TBox)
 
 	if (eq == true)
 	{
-		int mod = (int)x % (int)y;
+		mod = (int)x % (int)y;
 
 
 		TBox->SetValue(std::to_string(mod));
 
 	}
-
+	return mod;
 }
-void CalcProccessor::clearit(wxTextCtrl* TBox)
+float CalcProccessor::clearit(wxTextCtrl* TBox)
 {
-	TBox->SetValue("");
-	x = 0;
-	y = 0;
+	Crit = true;
+	if (x != 0)
+	{
+
+		TBox->Clear();
+		x = 0;
+		y = 0;
+	}
+	return x && y;
 }
 
-void CalcProccessor::equal(wxTextCtrl* TBox)
+bool CalcProccessor::equal(wxTextCtrl* TBox)
 {
 	eq = true;
 
@@ -130,6 +153,8 @@ void CalcProccessor::equal(wxTextCtrl* TBox)
 		addi = false;
 		eq = false;
 	}
+
+
 	if (subf == true)
 	{
 		sub(TBox);
@@ -154,7 +179,7 @@ void CalcProccessor::equal(wxTextCtrl* TBox)
 		modb = false;
 		eq = false;
 	}
-
+	return eq;
 }
 
 

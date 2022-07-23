@@ -5,46 +5,40 @@
 class CalcProccessor
 {
 private:
+	CalcProccessor();
 	static CalcProccessor* CP_Instance; //Instance variable
-	CalcProccessor() {}
 public:
+	static CalcProccessor* GetInstance();
 
-	static CalcProccessor* GetInstance() {
-		if (CP_Instance == nullptr)
-		{
-
-			CP_Instance = new CalcProccessor;
-
-		}
-		return CP_Instance;
-	}
+	
 	CalcProccessor(CalcProccessor& other) = delete;
 	void operator=(CalcProccessor& other) = delete;
 
 	//Pemdas and any signs
 public:
-	std::vector<float>Pemdas;
-
-
-	bool addi, subf, multiplyb, divb, modb = false;
 	
-	bool eq = false;
-	float x = 0, y = 0;
+	
+
+
+	bool addi = false, subf = false, multiplyb = false, divb = false, modb = false;
+	bool eq = false , Crit = false;
+	
+	float _addition, _mult, _subtraction, di , mod,x = 0, y = 0;
 
 
 	float bob(wxTextCtrl* TBox);
-	void add(wxTextCtrl* TBox);
-	void sub(wxTextCtrl* TBox);
-	void multiply(wxTextCtrl* TBox);
-	void Div(wxTextCtrl* TBox);
-	void Modd(wxTextCtrl* TBox);
-	void clearit(wxTextCtrl* TBox);
-	void equal(wxTextCtrl* TBox);
+	float add(wxTextCtrl* TBox);
+	float sub(wxTextCtrl* TBox);
+	float multiply(wxTextCtrl* TBox);
+	float Div(wxTextCtrl* TBox);
+	float Modd(wxTextCtrl* TBox);
+	float clearit(wxTextCtrl* TBox);
+	bool equal(wxTextCtrl* TBox);
 	std::string ToBinaryString(wxTextCtrl* TBox);
 	std::string ToDexString(wxTextCtrl* TBox);
 
 
-
+	
 
 
 };
